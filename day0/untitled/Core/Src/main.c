@@ -40,6 +40,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+extern uint8_t usart2_recv_array[1];
 
 /* USER CODE END PM */
 
@@ -116,7 +117,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_UART_Receive_IT(&huart2, usart2_recv_array, 1);
   /* USER CODE END 2 */
 
   /* Init scheduler */
