@@ -51,10 +51,13 @@
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+extern uint8_t usart2_RxStart;
+extern uint16_t usart2_RxTime;
+extern uint8_t usart2_RxFinish;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern TIM_HandleTypeDef htim2;
 extern UART_HandleTypeDef huart2;
 extern TIM_HandleTypeDef htim7;
 
@@ -159,6 +162,37 @@ void DebugMon_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32f1xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles TIM2 global interrupt.
+  */
+void TIM2_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM2_IRQn 0 */
+	if(usart2_RxStart == 1)
+	{
+		usart2_RxTime++;
+		if(usart2_RxTime > 2000)
+		{
+			usart2_RxTime = 2000;
+		}
+	}
+	else
+	{
+		usart2_RxStart = 0;
+	}
+	if((usart2_RxStart == 1) && (usart2_RxTime > 40))
+	{
+		usart2_RxFinish = 1;
+		usart2_RxTime = 0;
+	}
+
+  /* USER CODE END TIM2_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim2);
+  /* USER CODE BEGIN TIM2_IRQn 1 */
+
+  /* USER CODE END TIM2_IRQn 1 */
+}
 
 /**
   * @brief This function handles USART2 global interrupt.

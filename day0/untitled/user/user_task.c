@@ -20,7 +20,7 @@ enum State
 	STATE_ERROR
 };
 
-enum State current_state = STATE_PAUSE;
+enum State current_state = STATE_INIT;
 
 /**
  * @brief 系统运行状态机
@@ -67,7 +67,7 @@ void workTask()
 {
 	sys_debug_info("state: WORK!\r\n");
 	uint8_t m_tran_array[] = {0x00, 0x01, 0x02, 0x03};
-	usart2_transmit_data(m_tran_array, 4);
+	Usart2_Transmit_Data(m_tran_array, 4);
 	if(get_key_0_states() == 0)
 	{
 		current_state = STATE_PAUSE;
