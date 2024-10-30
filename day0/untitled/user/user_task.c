@@ -10,16 +10,6 @@
 #include "user_gpio.h"
 #include "user_usart.h"
 
-enum State
-{
-	STATE_INIT = 0,
-	STATE_STOP,
-	STATE_READY,
-	STATE_PAUSE,
-	STATE_WORK,
-	STATE_ERROR
-};
-
 enum State current_state = STATE_INIT;
 
 /**
@@ -57,7 +47,7 @@ void readyTask()
 void pauseTask()
 {
 	sys_debug_info("state: PAUSE!\r\n");
-	if(get_key_0_states() == 1)
+	if(get_key_0_states() == 0)
 	{
 		current_state = STATE_WORK;
 	}
@@ -66,9 +56,9 @@ void pauseTask()
 void workTask()
 {
 	sys_debug_info("state: WORK!\r\n");
-	uint8_t m_tran_array[] = {0x00, 0x01, 0x02, 0x03};
-	Usart2_Transmit_Data(m_tran_array, 4);
-	if(get_key_0_states() == 0)
+//	uint8_t m_tran_array[] = {0x00, 0x01, 0x02, 0x03};
+//	Usart2_Transmit_Data(m_tran_array, 4);
+	if(get_key_0_states() == 1)
 	{
 		current_state = STATE_PAUSE;
 	}

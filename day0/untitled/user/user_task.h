@@ -21,4 +21,14 @@ void workTask();
 void errorTask();
 void defaultTask();
 
+enum State
+{
+	STATE_INIT = 0,
+	STATE_STOP,
+	STATE_READY,
+	STATE_PAUSE,
+	STATE_WORK,
+	STATE_ERROR
+};
+
 #endif /* USER_TASK_H_ */

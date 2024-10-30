@@ -21,6 +21,8 @@ void Init_Usart2();
 
 void Usart2_Parse_Data();
 
+int Usart2_Check_Data(uint8_t *array, uint8_t len);
+
 int Sum_Check(uint8_t *array, uint8_t len);
 
 void Set_State(uint8_t state);
