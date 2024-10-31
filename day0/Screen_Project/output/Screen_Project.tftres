@@ -1,0 +1,12 @@
+<Resource>
+    <pages>
+        <page name="init" id="0" />
+        <page name="stop" id="1" />
+        <page name="ready" id="2" />
+        <page name="pause" id="3" />
+        <page name="work" id="4" />
+        <page name="error" id="5" />
+    </pages>
+    <images />
+    <waves />
+</Resource>

@@ -42,7 +42,8 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 extern uint8_t usart2_recv_array[1];
-
+extern enum State current_state;
+extern enum State next_state;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -453,6 +454,11 @@ void StartUsart2Task(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if(current_state != next_state)
+	  {
+		  current_state = next_state;
+		  Change_Screen_ID(current_state);
+	  }
 	  Usart2_Parse_Data();
 	  osDelay(1);
   }

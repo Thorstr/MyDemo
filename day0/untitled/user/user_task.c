@@ -11,6 +11,9 @@
 #include "user_usart.h"
 
 enum State current_state = STATE_INIT;
+enum State next_state = STATE_INIT;
+
+uint8_t stop_to_ready_flag = 0;
 
 /**
  * @brief 系统运行状态机
@@ -32,16 +35,26 @@ void stateTask()
 void initTask()
 {
 	sys_debug_info("state: INIT!\r\n");
+	osDelay(3000);
+	next_state = STATE_STOP;
+
 }
 
 void stopTask()
 {
-	sys_debug_info("state: STOP!\r\n")
+	sys_debug_info("state: STOP!\r\n");
+	if(stop_to_ready_flag == 1)
+	{
+		next_state = STATE_READY;
+		stop_to_ready_flag = 0;
+	}
 }
 
 void readyTask()
 {
 	sys_debug_info("state: READY!\r\n");
+	osDelay(3000);
+	next_state = STATE_PAUSE;
 }
 
 void pauseTask()
@@ -49,18 +62,16 @@ void pauseTask()
 	sys_debug_info("state: PAUSE!\r\n");
 	if(get_key_0_states() == 0)
 	{
-		current_state = STATE_WORK;
+		next_state = STATE_WORK;
 	}
 }
 
 void workTask()
 {
 	sys_debug_info("state: WORK!\r\n");
-//	uint8_t m_tran_array[] = {0x00, 0x01, 0x02, 0x03};
-//	Usart2_Transmit_Data(m_tran_array, 4);
 	if(get_key_0_states() == 1)
 	{
-		current_state = STATE_PAUSE;
+		next_state = STATE_PAUSE;
 	}
 }
 

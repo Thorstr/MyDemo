@@ -10,6 +10,7 @@
 
 #include "stm32f1xx_hal.h"
 #include "cmsis_os.h"
+#include "user_task.h"
 
 #define MAX_USART2_DATA_LEN 100
 
@@ -23,7 +24,11 @@ void Usart2_Parse_Data();
 
 int Usart2_Check_Data(uint8_t *array, uint8_t len);
 
+int Usart2_Screen_Check_Data(uint8_t *array, uint8_t len);
+
 int Sum_Check(uint8_t *array, uint8_t len);
 
 void Set_State(uint8_t state);
+
+void Change_Screen_ID(enum State m_state);
 #endif /* USER_USART_H_ */
