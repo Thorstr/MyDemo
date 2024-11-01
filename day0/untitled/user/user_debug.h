@@ -26,4 +26,6 @@ extern SemaphoreHandle_t uart1_mutex;
 							continue;\
 							}while(0);
 
+void test_debug();
+
 #endif /* USER_DEBUG_H_ */

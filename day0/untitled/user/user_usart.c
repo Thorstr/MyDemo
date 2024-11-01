@@ -213,3 +213,17 @@ void Change_Screen_ID(enum State m_state)
 	// 切换界面
 	Usart2_Transmit_Data(buffer, 9);
 }
+
+/**
+ * @brief 测试USART2发送信息
+ */
+void Test_Usart2_Transmit()
+{
+	uint8_t buffer[9] = {0xEE, 0xB1, 0x00, 0x00, 0x00, 0xFF, 0xFC, 0xFF, 0xFF};
+	for(uint8_t i = 0; i < 9; i++)
+	{
+		usart2_tran_data[i] = buffer[i];
+	}
+	Usart2_Transmit_Data(usart2_tran_data, 9);
+	osDelay(1000);
+}

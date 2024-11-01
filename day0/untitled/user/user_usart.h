@@ -31,4 +31,6 @@ int Sum_Check(uint8_t *array, uint8_t len);
 void Set_State(uint8_t state);
 
 void Change_Screen_ID(enum State m_state);
+
+void Test_Usart2_Transmit();
 #endif /* USER_USART_H_ */

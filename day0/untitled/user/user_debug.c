@@ -23,3 +23,9 @@ PUTCHAR_PROTOTYPE
 	HAL_UART_Transmit(&huart1,(unsigned char *)&ch, 1, 0x05);
 	return ch;
 }
+
+void test_debug()
+{
+	printf("Hello, my name is Xiaoshuai!");
+	osDelay(1000);
+}

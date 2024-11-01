@@ -30,6 +30,7 @@ void stateTask()
 		case STATE_ERROR:errorTask();break;
 		default:defaultTask();break;
 	}
+	osDelay(1000);
 }
 
 void initTask()

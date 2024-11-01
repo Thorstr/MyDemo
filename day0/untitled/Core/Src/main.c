@@ -412,8 +412,17 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  // test
+
+//	  // 测试debug
+//	  test_debug();
+
+//	  // 测试485发送
+//	  Test_Usart2_Transmit();
+
+	  // 系统状态机
 	  stateTask();
-	  osDelay(1000);
+	  osDelay(1);
   }
   /* USER CODE END 5 */
 }
@@ -431,6 +440,10 @@ void StartLEDTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  // test
+//	  // 测试led
+//	  test_led();
+
 	  led_0_on();
 	  led_1_on();
 	  osDelay(1000);
