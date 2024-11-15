@@ -1,0 +1,6 @@
+../User/Src/user_gpio.c:13:6:Led_1_On	1
+../User/Src/user_gpio.c:21:6:Led_1_Off	1
+../User/Src/user_gpio.c:29:6:Led_2_On	1
+../User/Src/user_gpio.c:37:6:Led_2_Off	1
+../User/Src/user_gpio.c:45:9:Get_Foot_Status	1
+../User/Src/user_gpio.c:51:6:test_led	1

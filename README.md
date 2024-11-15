@@ -5,6 +5,11 @@
 
 - stm32f103zet6练习小demo
 
+2. day1
+
+- stm32f103cbt6 p13调试程序
+- 踩脚踏使能dds，松开脚踏失能dds
+
 Git 常用指令
 
 - git clone [代码链接] 在仓库中拉取代码

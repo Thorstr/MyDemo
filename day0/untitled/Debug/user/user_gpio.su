@@ -1,0 +1,8 @@
+../user/user_gpio.c:13:6:led_0_on	8	static
+../user/user_gpio.c:21:6:led_0_off	8	static
+../user/user_gpio.c:29:6:led_1_on	8	static
+../user/user_gpio.c:37:6:led_1_off	8	static
+../user/user_gpio.c:45:6:test_led	8	static
+../user/user_gpio.c:60:9:get_key_0_states	16	static
+../user/user_gpio.c:70:9:get_key_1_states	16	static
+../user/user_gpio.c:80:9:get_key_2_states	16	static
