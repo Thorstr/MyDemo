@@ -1,0 +1,26 @@
+/*
+ * user_usb.c
+ *
+ *  Created on: Nov 22, 2024
+ *      Author: Thor
+ */
+
+#include "user_usb.h"
+
+uint8_t usb_tx_data[CUSTOM_HID_EPOUT_SIZE] = {0};
+
+extern USBD_HandleTypeDef hUsbDeviceFS;
+
+bool USB_Send_Data(uint8_t *buffer, uint8_t len)
+{
+	for(uint8_t i = 0; i < len; i++)
+	{
+		usb_tc_data[i] = buffer[i];
+	}
+	if(USBD_CUSTOM_HID_SendReport(&hUsbDeviceFs, usb_tx_data, CUSTOM_HID_EPOUT_SIZE) == USBD_OK)
+	{
+		PB_T(0);
+		return true;
+	}
+	return false;
+}

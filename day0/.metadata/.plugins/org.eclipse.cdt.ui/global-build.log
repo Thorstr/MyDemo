@@ -1,15 +1,6 @@
-16:29:22 **** Incremental Build of configuration Debug for project untitled ****
+15:40:53 **** Incremental Build of configuration Debug for project untitled ****
 make -j12 all 
-arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-D:/software/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./user/user_task.o:D:/thor_work/2024/MyDemo/day0/untitled/Debug/../user/user_task.c:13: multiple definition of `current_state'; ./Core/Src/main.o:D:/thor_work/2024/MyDemo/day0/untitled/Debug/../Core/Src/main.c:45: first defined here
-D:/software/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./user/user_task.o:D:/thor_work/2024/MyDemo/day0/untitled/Debug/../user/user_task.c:14: multiple definition of `next_state'; ./Core/Src/main.o:D:/thor_work/2024/MyDemo/day0/untitled/Debug/../Core/Src/main.c:46: first defined here
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:72: untitled.elf] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-16:33:56 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-gcc "../user/user_usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_usart.d" -MT"user/user_usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_usart.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../user/user_task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_task.d" -MT"user/user_task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_task.o"
 arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: untitled.elf
  
@@ -17,24 +8,26 @@ arm-none-eabi-size  untitled.elf
 arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
 arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
    text	   data	    bss	    dec	    hex	filename
-  29892	    108	   9108	  39108	   98c4	untitled.elf
+  46520	    452	  11108	  58080	   e2e0	untitled.elf
 Finished building: default.size.stdout
  
 Finished building: untitled.hex
 Finished building: untitled.list
  
  
-16:34:08 **** Incremental Build of configuration Debug for project untitled ****
+15:41:00 **** Incremental Build of configuration Debug for project untitled ****
 make -j12 all 
 arm-none-eabi-size  untitled.elf 
    text	   data	    bss	    dec	    hex	filename
-  29892	    108	   9108	  39108	   98c4	untitled.elf
+  46520	    452	  11108	  58080	   e2e0	untitled.elf
 Finished building: default.size.stdout
  
-17:06:35 **** Incremental Build of configuration Debug for project untitled ****
+15:49:53 **** Incremental Build of configuration Debug for project untitled ****
 make -j12 all 
-arm-none-eabi-gcc "../user/user_task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_task.d" -MT"user/user_task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_task.o"
-arm-none-eabi-gcc "../user/user_usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_usart.d" -MT"user/user_usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_usart.o"
+arm-none-eabi-gcc "../USB_DEVICE/Target/usbd_conf.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/Target/usbd_conf.d" -MT"USB_DEVICE/Target/usbd_conf.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/Target/usbd_conf.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usb_device.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usb_device.d" -MT"USB_DEVICE/App/usb_device.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usb_device.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_custom_hid_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usbd_custom_hid_if.d" -MT"USB_DEVICE/App/usbd_custom_hid_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_custom_hid_if.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.o"
 arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: untitled.elf
  
@@ -42,17 +35,27 @@ arm-none-eabi-size  untitled.elf
 arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
 arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
    text	   data	    bss	    dec	    hex	filename
-  29964	    108	   9108	  39180	   990c	untitled.elf
+  46520	    452	  11108	  58080	   e2e0	untitled.elf
 Finished building: default.size.stdout
  
 Finished building: untitled.hex
 Finished building: untitled.list
  
  
-17:08:48 **** Incremental Build of configuration Debug for project untitled ****
+15:50:48 **** Incremental Build of configuration Debug for project untitled ****
 make -j12 all 
-arm-none-eabi-gcc "../user/user_task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_task.d" -MT"user/user_task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_task.o"
-arm-none-eabi-gcc "../user/user_usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_usart.d" -MT"user/user_usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_usart.o"
+arm-none-eabi-size  untitled.elf 
+   text	   data	    bss	    dec	    hex	filename
+  46520	    452	  11108	  58080	   e2e0	untitled.elf
+Finished building: default.size.stdout
+ 
+16:52:26 **** Incremental Build of configuration Debug for project untitled ****
+make -j12 all 
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_custom_hid_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usbd_custom_hid_if.d" -MT"USB_DEVICE/App/usbd_custom_hid_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_custom_hid_if.o"
+../USB_DEVICE/App/usbd_custom_hid_if.c: In function 'CUSTOM_HID_OutEvent_FS':
+../USB_DEVICE/App/usbd_custom_hid_if.c:203:17: warning: unused variable 'i' [-Wunused-variable]
+  203 |         uint8_t i;
+      |                 ^
 arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: untitled.elf
  
@@ -60,113 +63,24 @@ arm-none-eabi-size  untitled.elf
 arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
 arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
    text	   data	    bss	    dec	    hex	filename
-  29972	    108	   9108	  39188	   9914	untitled.elf
+  47728	    452	  11108	  59288	   e798	untitled.elf
 Finished building: default.size.stdout
  
 Finished building: untitled.hex
 Finished building: untitled.list
  
  
-17:10:47 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-gcc "../user/user_usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_usart.d" -MT"user/user_usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_usart.o"
-arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: untitled.elf
- 
-arm-none-eabi-size  untitled.elf 
-arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
-arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
-   text	   data	    bss	    dec	    hex	filename
-  30000	    108	   9108	  39216	   9930	untitled.elf
-Finished building: default.size.stdout
- 
-Finished building: untitled.hex
-Finished building: untitled.list
- 
- 
-17:12:54 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-gcc "../user/user_usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_usart.d" -MT"user/user_usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_usart.o"
-arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: untitled.elf
- 
-arm-none-eabi-size  untitled.elf 
-arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
-arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
-   text	   data	    bss	    dec	    hex	filename
-  30024	    108	   9108	  39240	   9948	untitled.elf
-Finished building: default.size.stdout
- 
-Finished building: untitled.hex
-Finished building: untitled.list
- 
- 
-17:16:34 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-gcc "../user/user_usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_usart.d" -MT"user/user_usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_usart.o"
-arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: untitled.elf
- 
-arm-none-eabi-size  untitled.elf 
-arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
-arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
-   text	   data	    bss	    dec	    hex	filename
-  30024	    108	   9108	  39240	   9948	untitled.elf
-Finished building: default.size.stdout
- 
-Finished building: untitled.hex
-Finished building: untitled.list
- 
- 
-17:18:32 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-gcc "../user/user_task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_task.d" -MT"user/user_task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_task.o"
-arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: untitled.elf
- 
-arm-none-eabi-size  untitled.elf 
-arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
-arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
-   text	   data	    bss	    dec	    hex	filename
-  30040	    108	   9108	  39256	   9958	untitled.elf
-Finished building: default.size.stdout
- 
-Finished building: untitled.hex
-Finished building: untitled.list
- 
- 
-15:53:52 **** Build of configuration Debug for project untitled ****
+16:52:39 **** Incremental Build of configuration Debug for project untitled ****
 make -j12 all 
 arm-none-eabi-size  untitled.elf 
    text	   data	    bss	    dec	    hex	filename
-  30040	    108	   9108	  39256	   9958	untitled.elf
+  47728	    452	  11108	  59288	   e798	untitled.elf
 Finished building: default.size.stdout
  
-15:58:35 **** Incremental Build of configuration Debug for project untitled ****
+16:52:54 **** Incremental Build of configuration Debug for project untitled ****
 make -j12 all 
 arm-none-eabi-size  untitled.elf 
    text	   data	    bss	    dec	    hex	filename
-  30040	    108	   9108	  39256	   9958	untitled.elf
+  47728	    452	  11108	  59288	   e798	untitled.elf
 Finished building: default.size.stdout
- 
-17:21:59 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-gcc "../user/user_debug.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_debug.d" -MT"user/user_debug.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_debug.o"
-arm-none-eabi-gcc "../user/user_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_gpio.d" -MT"user/user_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_gpio.o"
-arm-none-eabi-gcc "../user/user_task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_task.d" -MT"user/user_task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_task.o"
-arm-none-eabi-gcc "../user/user_usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_usart.d" -MT"user/user_usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_usart.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: untitled.elf
- 
-arm-none-eabi-size  untitled.elf 
-arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
-arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
-   text	   data	    bss	    dec	    hex	filename
-  30048	    108	   9108	  39264	   9960	untitled.elf
-Finished building: default.size.stdout
- 
-Finished building: untitled.list
-Finished building: untitled.hex
- 
  

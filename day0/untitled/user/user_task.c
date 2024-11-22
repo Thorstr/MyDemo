@@ -9,6 +9,7 @@
 #include "user_debug.h"
 #include "user_gpio.h"
 #include "user_usart.h"
+#include "user_usb.h"
 
 enum State current_state = STATE_INIT;
 enum State next_state = STATE_INIT;
@@ -38,7 +39,6 @@ void initTask()
 	sys_debug_info("state: INIT!\r\n");
 	osDelay(3000);
 	next_state = STATE_STOP;
-
 }
 
 void stopTask()
@@ -49,6 +49,13 @@ void stopTask()
 		next_state = STATE_READY;
 		stop_to_ready_flag = 0;
 	}
+	uint8_t buffer[64] = {0};
+	for(uint8_t i = 0; i < 64; i++)
+	{
+		buffer[i] = 0x55 + i;
+	}
+
+	USB_Send_Data(buffer, 64);
 }
 
 void readyTask()

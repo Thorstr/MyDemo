@@ -1,0 +1,13 @@
+/*
+ * user_usb.c
+ *
+ *  Created on: Nov 22, 2024
+ *      Author: Thor
+ */
+
+#include "user_usb.h"
+
+uint8_t usb_tx_data[CUSTOM_HID_EPOUT_SIZE] = {0};
+
+extern USBD_HandleTypeDef hUsbDeviceFS;
+
