@@ -1,0 +1,29 @@
+/*
+ * user_data.h
+ *
+ *  Created on: Dec 4, 2024
+ *      Author: Thor
+ */
+
+#ifndef USER_DATA_H_
+#define USER_DATA_H_
+
+#include <math.h>
+#include <stm32f1xx_hal.h>
+#include <cmsis_os.h>
+
+#define SAMPLE_COUNT 1000  // 数据点数量
+
+// 电压和电流的最大值
+#define V_MAX 220.0  // 电压最大值，220V
+#define I_MAX 1.0    // 电流最大值，1A
+
+// 采样频率或时间周期（假设每个采样点之间的时间间隔为 1ms）
+#define SAMPLE_PERIOD 0.001 // 采样周期 1ms，即 1000Hz
+
+// 正弦波频率（假设正弦波频率为50Hz）
+#define FREQ 50.0  // 50Hz
+
+void Init_USB_Data();
+
+#endif /* USER_DATA_H_ */

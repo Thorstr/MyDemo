@@ -23,6 +23,8 @@
 
 /* USER CODE BEGIN INCLUDE */
 #include "user_debug.h"
+#include "usb_device.h"
+#include "user_usb.h"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +33,8 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
+extern uint8_t usb_rx_data[USB_MAX_SIZE];
+extern uint8_t usb_rx_finish;
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -91,30 +94,23 @@
 __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DESC_SIZE] __ALIGN_END =
 {
   /* USER CODE BEGIN 0 */
-		0x06, 0xFF, 0x00,      /* USAGE_PAGE (Vendor Page: 0xFF00) */
-		0x09, 0x01,            /* USAGE (Demo Kit)               */
-		0xa1, 0x01, /* COLLECTION (Application) */
-		/* 6 */
+	0x06, 0xff, 0x00,			//USAGE_PAGE (Vendor Defined Page 1) 表示�?个报文标签之类的用�?�类�?
+	0x09, 0x01,					//USAGE (Vendor Usage 1)   表示�?个报告ID标志
+	0xa1, 0x01,					//COLLECTION (Application) 表示应用集合，要以下面最后的0xc0结束�?
 
-		// The Input report
-		0x09,0x03, // USAGE ID - Vendor defined
-		0x15,0x00, // LOGICAL_MINIMUM (0)
-		0x26,0x00, 0xFF, // LOGICAL_MAXIMUM (255)
-		0x75,0x08, // REPORT_SIZE (8)
-		0x95,64, // REPORT_COUNT :SendLength
-		0x81,0x02, // INPUT (Data,Var,Abs)
-		//19
-		// The Output report
-		0x09,0x04, // USAGE ID - Vendor defined
-		0x15,0x00, // LOGICAL_MINIMUM (0)
-		0x26,0x00,0xFF, // LOGICAL_MAXIMUM (255)
-		0x75,0x08, // REPORT_SIZE (8)
-		0x95,64, // REPORT_COUNT:ReceiveLength
-		0x91,0x02, // OUTPUT (Data,Var,Abs)
-		//32
-		// The Feature report
-		/* 45 */
-		//#endif
+	0x09, 0x02,					//USAGE (Vendor Usage 1) 功能序号2，单片机的发送报�?
+	0x15, 0x00,					//LOGICAL_MINIMUM (0)    表示每个传输数据的最小�?�限定为0
+	0x25, 0x7f,					//LOGICAL_MAXIMUM (127)  表示每个传输数据的最大�?�限定为127
+	0x95, 0x40,					//REPORT_COUNT (64)�?�?  每包数据的最大长度，64bytes
+	0x75, 0x08,					//REPORT_SIZE (8)�?�?�?  每个数据的宽度，8bits
+	0x81, 0x02,					//INPUT (Data,Var,Abs)�? 表示USB要输入数据到PC的功�?
+
+	0x09, 0x03,					//USAGE (Vendor Usage 1) 功能序号3，单片机的接收报�?
+	0x15, 0x00,					//LOGICAL_MINIMUM (0)    表示每个传输数据的最小�?�限定为0
+	0x25, 0x7f,					//LOGICAL_MAXIMUM (127)  表示每个传输数据的最大�?�限定为127
+	0x95, 0x40,					//REPORT_COUNT (64)      每包数据的最大长度，64bytes
+	0x75, 0x08,					//REPORT_SIZE (8)        每个数据的宽度，8bits
+	0x91, 0x02,					//OUTPUT (Data,Var,Abs)  表示USB设备要接收PC的数据的功能
   /* USER CODE END 0 */
   0xC0    /*     END_COLLECTION	             */
 };
@@ -199,16 +195,20 @@ static int8_t CUSTOM_HID_DeInit_FS(void)
 static int8_t CUSTOM_HID_OutEvent_FS(uint8_t event_idx, uint8_t state)
 {
   /* USER CODE BEGIN 6 */
-	char log[250];
-	uint8_t i;
-	uint8_t len = USBD_GetRxCount(&hUsbDeviceFS, CUSTOM_HID_EPOUT_ADDR);
+	//定义�?个指向USBD_CUSTOM_HID_HandleTypeDef结构体的指针
 	USBD_CUSTOM_HID_HandleTypeDef *hhid;
+	//得到USB接收数据的储存地�?
 	hhid = (USBD_CUSTOM_HID_HandleTypeDef *)hUsbDeviceFS.pClassData;
-	for(uint8_t i = 0; i < len; i++)
+	if(usb_rx_finish == 0)
 	{
-		sprintf(log + (i*2), "%02x", hhid->Report_buf[i]);
+		usb_rx_finish = 1;
+		for(uint8_t i = 0; i < 64; i++)
+		{
+			usb_rx_data[i] = hhid->Report_buf[i];
+		}
 	}
-	sys_debug_info("%s\r\n", log);
+	memset(hhid->Report_buf, 0, 64);
+	USBD_CUSTOM_HID_ReceivePacket(&hUsbDeviceFS);			//必须加这�?句，否则单片机只能接收一�?
   return (USBD_OK);
   /* USER CODE END 6 */
 }
@@ -229,6 +229,29 @@ static int8_t USBD_CUSTOM_HID_SendReport_FS(uint8_t *report, uint16_t len)
 /* USER CODE END 7 */
 
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_IMPLEMENTATION */
+uint8_t USB_Rx_Buffer[64];  // 定义接收缓冲�?
+
+uint8_t USBD_CUSTOM_HID_ReceivePacket(USBD_HandleTypeDef *pdev)
+{
+    // 获取接收到的数据（自定义接收缓冲区大小，64字节为示例）
+    uint8_t *buffer = USBD_CUSTOM_HID_GetDataBuffer(pdev);
+
+    // 复制数据到USB接收缓冲�?
+    for (int i = 0; i < 64; i++) {
+        USB_Rx_Buffer[i] = buffer[i];
+    }
+
+    // 这里可以根据接收到的数据执行处理
+
+    return USBD_OK;
+}
+
+// 返回指向数据缓冲区的指针
+uint8_t* USBD_CUSTOM_HID_GetDataBuffer(USBD_HandleTypeDef *pdev)
+{
+    // 返回接收缓冲区的指针
+    return USB_Rx_Buffer;
+}
 
 /* USER CODE END PRIVATE_FUNCTIONS_IMPLEMENTATION */
 /**

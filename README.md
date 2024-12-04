@@ -3,12 +3,16 @@
 
 1. day0
 
-- stm32f103zet6练习小demo
+- stm32f103zet6练习小demo（usb2.0通信）
 
 2. day1
 
 - stm32f103cbt6 p13调试程序
 - 踩脚踏使能dds，松开脚踏失能dds
+
+3. day2
+
+- stm32f103zet6练习小demo（usb虚拟串口通信）
 
 Git 常用指令
 

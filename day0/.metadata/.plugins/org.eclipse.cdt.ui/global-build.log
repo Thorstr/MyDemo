@@ -1,6 +1,11 @@
-15:40:53 **** Incremental Build of configuration Debug for project untitled ****
+15:10:14 **** Incremental Build of configuration Debug for project untitled ****
 make -j12 all 
-arm-none-eabi-gcc "../user/user_task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_task.d" -MT"user/user_task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_task.o"
+arm-none-eabi-gcc "../user/user_usb.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_usb.d" -MT"user/user_usb.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_usb.o"
+../user/user_usb.c: In function 'USB_Send_Data':
+../user/user_usb.c:31:12: warning: implicit declaration of function 'USBD_CUSTOM_HID_SendReport'; did you mean 'USBD_CUSTOM_HID_ReceivePacket'? [-Wimplicit-function-declaration]
+   31 |         if(USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, usb_tx_data, USB_MAX_SIZE) == USBD_OK)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |            USBD_CUSTOM_HID_ReceivePacket
 arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: untitled.elf
  
@@ -8,79 +13,17 @@ arm-none-eabi-size  untitled.elf
 arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
 arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
    text	   data	    bss	    dec	    hex	filename
-  46520	    452	  11108	  58080	   e2e0	untitled.elf
+  48440	    448	  11240	  60128	   eae0	untitled.elf
 Finished building: default.size.stdout
  
 Finished building: untitled.hex
 Finished building: untitled.list
  
  
-15:41:00 **** Incremental Build of configuration Debug for project untitled ****
+15:10:44 **** Incremental Build of configuration Debug for project untitled ****
 make -j12 all 
 arm-none-eabi-size  untitled.elf 
    text	   data	    bss	    dec	    hex	filename
-  46520	    452	  11108	  58080	   e2e0	untitled.elf
-Finished building: default.size.stdout
- 
-15:49:53 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-gcc "../USB_DEVICE/Target/usbd_conf.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/Target/usbd_conf.d" -MT"USB_DEVICE/Target/usbd_conf.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/Target/usbd_conf.o"
-arm-none-eabi-gcc "../USB_DEVICE/App/usb_device.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usb_device.d" -MT"USB_DEVICE/App/usb_device.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usb_device.o"
-arm-none-eabi-gcc "../USB_DEVICE/App/usbd_custom_hid_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usbd_custom_hid_if.d" -MT"USB_DEVICE/App/usbd_custom_hid_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_custom_hid_if.o"
-arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.o"
-arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: untitled.elf
- 
-arm-none-eabi-size  untitled.elf 
-arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
-arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
-   text	   data	    bss	    dec	    hex	filename
-  46520	    452	  11108	  58080	   e2e0	untitled.elf
-Finished building: default.size.stdout
- 
-Finished building: untitled.hex
-Finished building: untitled.list
- 
- 
-15:50:48 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-size  untitled.elf 
-   text	   data	    bss	    dec	    hex	filename
-  46520	    452	  11108	  58080	   e2e0	untitled.elf
-Finished building: default.size.stdout
- 
-16:52:26 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-gcc "../USB_DEVICE/App/usbd_custom_hid_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day0/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usbd_custom_hid_if.d" -MT"USB_DEVICE/App/usbd_custom_hid_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_custom_hid_if.o"
-../USB_DEVICE/App/usbd_custom_hid_if.c: In function 'CUSTOM_HID_OutEvent_FS':
-../USB_DEVICE/App/usbd_custom_hid_if.c:203:17: warning: unused variable 'i' [-Wunused-variable]
-  203 |         uint8_t i;
-      |                 ^
-arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day0\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: untitled.elf
- 
-arm-none-eabi-size  untitled.elf 
-arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
-arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
-   text	   data	    bss	    dec	    hex	filename
-  47728	    452	  11108	  59288	   e798	untitled.elf
-Finished building: default.size.stdout
- 
-Finished building: untitled.hex
-Finished building: untitled.list
- 
- 
-16:52:39 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-size  untitled.elf 
-   text	   data	    bss	    dec	    hex	filename
-  47728	    452	  11108	  59288	   e798	untitled.elf
-Finished building: default.size.stdout
- 
-16:52:54 **** Incremental Build of configuration Debug for project untitled ****
-make -j12 all 
-arm-none-eabi-size  untitled.elf 
-   text	   data	    bss	    dec	    hex	filename
-  47728	    452	  11108	  59288	   e798	untitled.elf
+  48440	    448	  11240	  60128	   eae0	untitled.elf
 Finished building: default.size.stdout
  

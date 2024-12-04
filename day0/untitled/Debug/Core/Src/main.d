@@ -44,7 +44,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  D:/thor_work/2024/MyDemo/day0/untitled/user/user_gpio.h \
  D:/thor_work/2024/MyDemo/day0/untitled/user/user_usart.h \
  D:/thor_work/2024/MyDemo/day0/untitled/user/user_task.h \
- D:/thor_work/2024/MyDemo/day0/untitled/user/user_debug.h
+ D:/thor_work/2024/MyDemo/day0/untitled/user/user_debug.h \
+ D:/thor_work/2024/MyDemo/day0/untitled/user/user_usb.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -92,3 +93,4 @@ D:/thor_work/2024/MyDemo/day0/untitled/user/user_gpio.h:
 D:/thor_work/2024/MyDemo/day0/untitled/user/user_usart.h:
 D:/thor_work/2024/MyDemo/day0/untitled/user/user_task.h:
 D:/thor_work/2024/MyDemo/day0/untitled/user/user_debug.h:
+D:/thor_work/2024/MyDemo/day0/untitled/user/user_usb.h:

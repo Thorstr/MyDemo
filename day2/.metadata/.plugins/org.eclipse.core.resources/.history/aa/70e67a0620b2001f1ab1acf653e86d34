@@ -1,0 +1,12 @@
+/*
+ * user_data.c
+ *
+ *  Created on: Dec 4, 2024
+ *      Author: Thor
+ */
+#include "user_data.h"
+
+void Init_USB_Data()
+{
+
+}

@@ -1,10 +1,10 @@
-16:52:54 **** Incremental Build of configuration Debug for project untitled ****
+15:10:44 **** Incremental Build of configuration Debug for project untitled ****
 make -j12 all 
 arm-none-eabi-size  untitled.elf 
    text	   data	    bss	    dec	    hex	filename
-  47728	    452	  11108	  59288	   e798	untitled.elf
+  48440	    448	  11240	  60128	   eae0	untitled.elf
 Finished building: default.size.stdout
  
 
-16:52:55 Build Finished. 0 errors, 0 warnings. (took 984ms)
+15:10:45 Build Finished. 0 errors, 0 warnings. (took 1s.138ms)
 

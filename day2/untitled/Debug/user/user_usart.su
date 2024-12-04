@@ -1,0 +1,10 @@
+../user/user_usart.c:27:6:Usart2_Transmit_Data	24	static
+../user/user_usart.c:41:6:HAL_UART_RxCpltCallback	16	static
+../user/user_usart.c:66:6:Init_Usart2	4	static
+../user/user_usart.c:77:6:Usart2_Parse_Data	16	static
+../user/user_usart.c:124:5:Usart2_Check_Data	16	static
+../user/user_usart.c:144:5:Sum_Check	24	static
+../user/user_usart.c:165:6:Set_State	16	static
+../user/user_usart.c:180:5:Usart2_Screen_Check_Data	16	static
+../user/user_usart.c:199:6:Change_Screen_ID	32	static
+../user/user_usart.c:220:6:Test_Usart2_Transmit	24	static
