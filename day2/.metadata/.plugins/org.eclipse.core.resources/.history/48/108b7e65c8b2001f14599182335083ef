@@ -108,17 +108,14 @@ uint8_t Parse_USB_Data()
 			reBuf[5] = usb_rx_data[5];
 			reBuf[6] = usb_rx_data[6];
 			reBuf[7] = usb_rx_data[7];
-			for(uint8_t i = 0; i < 6; i++)
-			{
-				reBuf[i*2+8] = voltage_array[usb_count]&0xFF;
-				reBuf[i*2+9] = (voltage_array[usb_count]&0xFF00) >> 8;
-			}
-			for(uint8_t i = 0; i < 6; i++)
-			{
-				reBuf[i*2+20] = current_array[usb_count]&0xFF;
-				reBuf[i*2+21] = (current_array[usb_count]&0xFF00) >> 8;
-			}
+//			printf("random = %d\r\n", random);
+			reBuf[8] = voltage_array[usb_count]&0xFF;
+			reBuf[9] = (voltage_array[usb_count]&0xFF00) >> 8;
+//			printf("random = %d\r\n", random);
+			reBuf[10] = current_array[usb_count]&0xFF;
+			reBuf[11] = (current_array[usb_count]&0xFF00) >> 8;
 			reBuf[reBuf[3] + 4] = Get_Data_Sum(reBuf, reBuf[3] + 5);
+//			Show_Data_Hex(reBuf, reBuf[3] + 5);
 			USB_Send_Data(reBuf, reBuf[3] + 5);
 			usb_count++;
 		}

@@ -1,20 +1,10 @@
-17:29:43 **** Incremental Build of configuration Debug for project untitled ****
+13:25:22 **** Incremental Build of configuration Debug for project untitled ****
 make -j12 all 
-arm-none-eabi-gcc "../user/user_data.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I"D:/thor_work/2024/MyDemo/day2/untitled/user" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"user/user_data.d" -MT"user/user_data.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "user/user_data.o"
-arm-none-eabi-gcc -o "untitled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\thor_work\2024\MyDemo\day2\untitled\STM32F103ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="untitled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: untitled.elf
- 
 arm-none-eabi-size  untitled.elf 
-arm-none-eabi-objdump -h -S untitled.elf  > "untitled.list"
-arm-none-eabi-objcopy  -O ihex untitled.elf  "untitled.hex"
    text	   data	    bss	    dec	    hex	filename
-  56168	    476	  17940	  74584	  12358	untitled.elf
+  56268	    476	  17940	  74684	  123bc	untitled.elf
 Finished building: default.size.stdout
  
-Finished building: untitled.hex
-Finished building: untitled.list
- 
- 
 
-17:29:45 Build Finished. 0 errors, 0 warnings. (took 2s.447ms)
+13:25:23 Build Finished. 0 errors, 0 warnings. (took 1s.68ms)
 

@@ -115,8 +115,8 @@ uint8_t Parse_USB_Data()
 			}
 			for(uint8_t i = 0; i < 6; i++)
 			{
-				reBuf[i*2+20] = current_array[usb_count]&0xFF;
-				reBuf[i*2+21] = (current_array[usb_count]&0xFF00) >> 8;
+				reBuf[i*2+20] = voltage_array[usb_count]&0xFF;
+				reBuf[i*2+21] = (voltage_array[usb_count]&0xFF00) >> 8;
 			}
 			reBuf[reBuf[3] + 4] = Get_Data_Sum(reBuf, reBuf[3] + 5);
 			USB_Send_Data(reBuf, reBuf[3] + 5);
