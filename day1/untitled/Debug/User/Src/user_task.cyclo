@@ -1,3 +1,0 @@
-../User/Src/user_task.c:31:6:UsartDefaultTask	1
-../User/Src/user_task.c:40:6:LedDefaultTask	1
-../User/Src/user_task.c:54:6:mainTask	9

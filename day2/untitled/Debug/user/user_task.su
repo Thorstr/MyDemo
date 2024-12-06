@@ -1,8 +1,0 @@
-../user/user_task.c:21:6:stateTask	8	static
-../user/user_task.c:36:6:initTask	8	static
-../user/user_task.c:42:6:stopTask	8	static
-../user/user_task.c:53:6:readyTask	8	static
-../user/user_task.c:60:6:pauseTask	8	static
-../user/user_task.c:69:6:workTask	8	static
-../user/user_task.c:79:6:errorTask	8	static
-../user/user_task.c:84:6:defaultTask	8	static

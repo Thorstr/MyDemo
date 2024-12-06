@@ -1,8 +1,0 @@
-../user/user_task.c:21:6:stateTask	7
-../user/user_task.c:36:6:initTask	1
-../user/user_task.c:42:6:stopTask	2
-../user/user_task.c:53:6:readyTask	1
-../user/user_task.c:60:6:pauseTask	2
-../user/user_task.c:69:6:workTask	1
-../user/user_task.c:79:6:errorTask	1
-../user/user_task.c:84:6:defaultTask	1

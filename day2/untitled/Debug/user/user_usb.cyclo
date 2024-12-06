@@ -1,5 +1,0 @@
-../user/user_usb.c:30:9:USB_Send_Data	3
-../user/user_usb.c:43:9:Parse_USB_Data	17
-../user/user_usb.c:148:9:Check_Data_Sum	3
-../user/user_usb.c:166:6:Show_Data_Hex	2
-../user/user_usb.c:177:9:Get_Data_Sum	2

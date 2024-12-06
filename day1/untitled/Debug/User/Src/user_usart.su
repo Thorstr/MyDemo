@@ -1,6 +1,0 @@
-../User/Src/user_usart.c:26:6:HAL_UART_RxCpltCallback	16	static
-../User/Src/user_usart.c:51:6:Parse_Usart3_Data	8	static
-../User/Src/user_usart.c:67:6:Usart3_Transmit_Data	24	static
-../User/Src/user_usart.c:81:6:Show_Hex_Data	24	static
-../User/Src/user_usart.c:94:6:Init_Usart3_Param	4	static
-../User/Src/user_usart.c:102:6:Test_Usart3	16	static
