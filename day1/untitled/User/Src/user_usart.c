@@ -70,7 +70,7 @@ void Usart3_Transmit_Data(uint8_t * buffer, uint8_t len)
 	{
 		usart3_tx_buffer[i] = buffer[i];
 	}
-	HAL_UART_Transmit_IT(&huart3, usart3_tx_buffer, len);
+	HAL_UART_Transmit(&huart3, usart3_tx_buffer, len, 0xFFFF);
 }
 
 /**

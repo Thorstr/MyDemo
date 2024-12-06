@@ -50,9 +50,8 @@ void LedDefaultTask(void *argument)
 
 /**
  * @brief 踩脚踏工作，松开停止
- * @param key 脚踏的状态值
  */
-void mainTask(uint8_t key)
+void mainTask()
 {
 	switch(current_state)
 	{
@@ -75,7 +74,8 @@ void mainTask(uint8_t key)
 				Stop_DDS();
 				last_state = current_state;
 			}
-			if(key == 0)
+			uint8_t status = Get_Foot_Status();
+			if(status == 0)
 			{
 				current_state = WORK;
 			}
@@ -91,7 +91,8 @@ void mainTask(uint8_t key)
 				Start_DDS();
 				last_state = current_state;
 			}
-			if(key == 1)
+			uint8_t status = Get_Foot_Status();
+			if(status == 1)
 			{
 				current_state = PAUSE;
 			}

@@ -34,9 +34,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_debug.h \
- D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_usart.h \
- D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_task.h
+ D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_debug.h \
+ D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_usart.h \
+ D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_task.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -73,6 +73,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
-D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_debug.h:
-D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_usart.h:
-D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_task.h:
+D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_debug.h:
+D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_usart.h:
+D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_task.h:

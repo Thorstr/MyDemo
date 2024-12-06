@@ -1,5 +1,5 @@
 User/Src/user_task.o: ../User/Src/user_task.c \
- D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_task.h \
+ D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_task.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -33,13 +33,13 @@ User/Src/user_task.o: ../User/Src/user_task.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
- D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_usart.h \
- D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_gpio.h \
- D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_dds.h \
- D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_debug.h \
+ D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_usart.h \
+ D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_gpio.h \
+ D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_dds.h \
+ D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_debug.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
-D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_task.h:
+D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_task.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
@@ -73,9 +73,9 @@ D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/I
 ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
-D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_usart.h:
-D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_gpio.h:
-D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_dds.h:
-D:/thor_work/2024/Bone\ Dynamic\ System/202410/p13/STM32F103CBT6/untitled/User/Inc/user_debug.h:
+D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_usart.h:
+D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_gpio.h:
+D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_dds.h:
+D:/thor_work/2024/MyDemo/day1/untitled/User/Inc/user_debug.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:

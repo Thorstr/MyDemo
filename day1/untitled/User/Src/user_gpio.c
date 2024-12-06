@@ -44,8 +44,14 @@ void Led_2_Off()
  */
 uint8_t Get_Foot_Status()
 {
-	uint8_t status = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
-	return status;
+	uint8_t state1 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+	HAL_Delay(20);  // 延迟20ms
+	uint8_t state2 = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+	if (state1 == state2)
+	{
+	    return state1;  // 返回稳定状态
+	}
+	return 0xFF;
 }
 
 void test_led()

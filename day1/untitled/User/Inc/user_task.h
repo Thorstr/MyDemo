@@ -22,6 +22,6 @@ void UsartDefaultTask(void *argument);
 
 void LedDefaultTask(void *argument);
 
-void mainTask(uint8_t key);
+void mainTask();
 
 #endif /* INC_USER_TASK_H_ */

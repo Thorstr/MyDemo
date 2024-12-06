@@ -5,5 +5,5 @@
 ../Core/Src/main.c:299:13:MX_USART3_UART_Init	2
 ../Core/Src/main.c:332:13:MX_GPIO_Init	1
 ../Core/Src/main.c:374:6:StartDefaultTask	1
-../Core/Src/main.c:395:6:HAL_TIM_PeriodElapsedCallback	2
-../Core/Src/main.c:412:6:Error_Handler	1
+../Core/Src/main.c:394:6:HAL_TIM_PeriodElapsedCallback	2
+../Core/Src/main.c:411:6:Error_Handler	1
