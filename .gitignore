@@ -1,2 +1,4 @@
 # Ignore workspace-specific files
-/.metadata/
+**/.metadata/
+**/Debug/
+**/.settings/
